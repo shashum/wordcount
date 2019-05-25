@@ -1,0 +1,24 @@
+{% extends 'test.html' %}
+{% block content %}
+
+
+{% if '{{total}}' == 0 %}
+<p>글이 입력되지 않음</p>
+{% else %}
+<h1>현재 입력한 글은 단어 {{total}}개로 구성되어 있습니다</h1>
+
+{% endif %}
+<a href="{% url 'home' %}">다시하기</a>
+{%csrf_token%}
+<hr>
+<h2>입력한 글 : </h2>
+<br>
+{{full}}
+<hr>
+<h2>단어 수 : </h2>
+<br>
+{% for word, num in dic %}
+{{word}} : {{num}}
+<br>
+{% endfor %}
+{% endblock %}

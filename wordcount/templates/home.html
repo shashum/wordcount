@@ -1,0 +1,20 @@
+{% extends 'test.html' %}
+{% block content %}
+<title>조잡한 단어 수 세기</title>
+<body>
+  
+          <h1 class="display=4">단어 수 세기</h1>
+          <br>
+          <a href="{% url 'about'%}">작업일지</a>
+          <hr class="my-3">
+          <form action="{% url 'result' %}">
+              <textarea cols="40" rows="10" name="fulltext"></textarea>
+              <br>
+              <input type="submit" value="단어 세기!">
+      </div>
+  </div>
+  </div>
+</body>
+</html>
+
+{% endblock %}
